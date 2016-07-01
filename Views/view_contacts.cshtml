@@ -1,0 +1,11 @@
+<h1>Contacts</h1>
+
+@foreach(var contact in @Model)
+{
+  <p><a href="/contact/details/@contact.GetId()">@contact.GetName()</a></p>
+}
+
+<a href="/contacts/new">Add a new contact.</a>
+
+
+<button type="button" name="button">Delete all contacts.</button>

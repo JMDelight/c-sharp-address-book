@@ -1,0 +1,12 @@
+<h1>Edit Contact</h1>
+<form id="new-contact" action="/contact/details/@Model.GetId()" method="post">
+  <label for="new-name">Name: </label>
+  <input id="new-name" type="text" name="new-name" value="@Model.GetName()"> <br>
+  <label for="new-phone-number">Phone Number: </label>
+  <input id="new-phone-number" type="text" name="new-phone-number" value="@Model.GetPhoneNumber()"> <br>
+  <label for="newaddress">Address: </label>
+  <input id="newaddress" type="text" name="newaddress" value="@Model.GetAddress()"> <br>
+  <button type="submit" name="button">Update Contact</button>
+</form>
+<br>
+<p>Take me back to <a href="/contacts">view all contacts</a> without changing @Model.GetName()'s info.</p>
