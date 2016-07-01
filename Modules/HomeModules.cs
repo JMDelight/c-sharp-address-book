@@ -1,6 +1,6 @@
 using Nancy;
 using System.Collections.Generic;
-using AddressB.Objects;
+using AddressBook.Objects;
 
 namespace AddressBook
 {
@@ -24,7 +24,7 @@ namespace AddressBook
       };
       Get["/contact/details/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
-        return View["/view_details.cshtml", contact];
+        return View["/contact_details.cshtml", contact];
       };
       Get["/contact/details/edit/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
@@ -35,7 +35,7 @@ namespace AddressBook
         contact.SetName(Request.Form["new-name"]);
         contact.SetPhoneNumber(Request.Form["new-phone-number"]);
         contact.SetAddress(Request.Form["new-address"]);
-        return View["/view_details.cshtml", contact];
+        return View["/contact_details.cshtml", contact];
       };
     }
   }

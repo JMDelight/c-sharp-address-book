@@ -7,21 +7,20 @@ namespace AddressBook.Objects
   public class Contact
   {
     private string _name;
-    private int _phoneNumber;
+    private string _phoneNumber;
     private string _address;
     private static List<Contact> _instances = new List<Contact> {};
     private int _id;
 
-    public Job(string name, int phoneNumber, string address)
+    public Contact(string name, string phoneNumber, string address)
     {
-      _name = Name;
+      _name = name;
       _phoneNumber = phoneNumber;
       _address = address;
-      _endDate = endDate;
       _instances.Add(this);
       _id = _instances.Count;
     }
-    
+
     // Getters for Contact Object
     public string GetName()
     {
