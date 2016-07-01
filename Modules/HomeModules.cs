@@ -37,6 +37,10 @@ namespace AddressBook
         contact.SetAddress(Request.Form["new-address"]);
         return View["/contact_details.cshtml", contact];
       };
+      Post["/contacts_deleted"] = _ => {
+        Contact.DeleteAllContacts();
+        return View["/contacts_deleted.cshtml"];
+      };
     }
   }
 }

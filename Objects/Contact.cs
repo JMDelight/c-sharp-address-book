@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System;
-using System.Linq;
 
 namespace AddressBook.Objects
 {
@@ -65,6 +64,12 @@ namespace AddressBook.Objects
     public static Contact Find(int searchId)
     {
       return _instances[searchId -1];
+    }
+
+    // Deletes all contacts
+    public static void DeleteAllContacts()
+    {
+      _instances.Clear();
     }
   }
 }
