@@ -33,16 +33,20 @@ namespace AddressBook.Objects
     {
       return _address;
     }
-    public static List<Contact> GetAll()
-    {
-      return _instances;
-    }
     public int GetId()
     {
       return _id;
     }
+    public static List<Contact> GetAll()
+    {
+      return _instances;
+    }
 
     // Setters for Contact object
+    public void SetName(string newName)
+    {
+      _name = newName;
+    }
     public void SetPhoneNumber(string newPhoneNumber)
     {
       _phoneNumber = newPhoneNumber;
@@ -51,25 +55,21 @@ namespace AddressBook.Objects
     {
       _address = newAddress;
     }
-    public void SetName(string newName)
-    {
-      _name = newName;
-    }
     public void SetId(int newId)
     {
       _id = newId;
-    }
-
-    // Searches for specific Contact object and returns it
-    public static Contact Find(int searchId)
-    {
-      return _instances[searchId -1];
     }
 
     // Deletes all contacts
     public static void DeleteAllContacts()
     {
       _instances.Clear();
+    }
+
+    // Searches for specific Contact object and returns it
+    public static Contact Find(int searchId)
+    {
+      return _instances[searchId -1];
     }
   }
 }

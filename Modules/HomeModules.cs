@@ -20,17 +20,17 @@ namespace AddressBook
       };
       Post["/contact_created"] = _ => {
         Contact newContact = new Contact(Request.Form["new-name"], Request.Form["new-phone-number"], Request.Form["new-address"]);
-        return View["contact_details.cshtml", newContact];
+        return View["new_contact_details.cshtml", newContact];
       };
-      Get["/contact/details/{id}"] = parameters => {
+      Get["/contacts/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
         return View["/contact_details.cshtml", contact];
       };
-      Get["/contact/details/edit/{id}"] = parameters => {
+      Get["/contacts/edit/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
         return View["/edit_contact.cshtml", contact];
       };
-      Post["/contact/details/{id}"] = parameters => {
+      Post["/contacts/{id}"] = parameters => {
         Contact contact = Contact.Find(parameters.id);
         contact.SetName(Request.Form["new-name"]);
         contact.SetPhoneNumber(Request.Form["new-phone-number"]);
